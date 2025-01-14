@@ -118,6 +118,8 @@ jobs:
         with:
           service: note-api-teamrocket
           image: docker.io/${{ secrets.DOCKER_HUB_USERNAME }}/note-api:latest
-          #region: us-central1  # Replace with your desired region
+          #region: us-central1
           #platform: managed
-          env_vars: BACKEND=memory
+          env_vars: BACKEND=memory,OTEL_SERVICE_NAME=note-api,OTEL_TRACES_EXPORTER=gcp
+          flags: >
+            --set-secrets GHCR_AUTH_TOKEN=GHCR_AUTH_TOKEN:latest
