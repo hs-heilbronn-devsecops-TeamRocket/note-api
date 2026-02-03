@@ -13,3 +13,4 @@ opentelemetry-exporter-gcp-trace
 opentelemetry-instrumentation-fastapi
 opentelemetry-instrumentation-requests
 opentelemetry-exporter-google-cloud
+protobuf>=6.33.5 # not directly required, pinned by Snyk to avoid a vulnerability
